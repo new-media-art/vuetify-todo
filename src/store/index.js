@@ -29,7 +29,7 @@ export default new Vuex.Store({
     addTask(state, newTaskTitle){
       let newTask = {
         id: Date.now(),
-        title: this.newTaskTitle,
+        title: newTaskTitle,
         done: false
       }
       state.tasks.push(newTask)

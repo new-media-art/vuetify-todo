@@ -2,7 +2,7 @@
   <div class="home">
           <v-text-field
           v-model="newTaskTitle"
-          @click:append="addTask"
+          @click:append="addTask" 
           @keyup.enter="addTask"
             class="pa-3"
             outlined
@@ -86,7 +86,10 @@
       
     },
     methods: {
-    
+      addTask(){
+       this.$store.commit('addTask', this.newTaskTitle)
+       this.newTaskTitle = ''
+      },
       doneTask(id){
         let task = this.tasks.filter(task => task.id === id)[0]
         task.done = !task.done
