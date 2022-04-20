@@ -48,7 +48,8 @@
       color="primary"
       dark
       src="clouds.jpg"
-      prominent  
+      prominent 
+      height="170" 
         
     >
       <template v-slot:img="{ props }">
@@ -65,15 +66,14 @@
             <search />
           </v-row>
           <v-row>
-            <v-app-bar-title class="ml-4">Vuetify Todo</v-app-bar-title>
+            <v-app-bar-title class="text-h4 ml-4">
+              Vuetify Todo
+              </v-app-bar-title>
           </v-row>
-        </v-container>
-
-      
-
-      
-
-     
+          <v-row>
+            <live-date-time />
+          </v-row>
+        </v-container>      
 
     </v-app-bar>
 
@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import LiveDateTime from '@/components/Tools/LiveDateTime.vue'
   export default {
     data: () => ({
        items: [
@@ -95,7 +96,9 @@
       }),
       components: {
         'search': require('@/components/Tools/Search.vue').default,
+        'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
         'snackbar': require('@/components/Shared/Snackbar.vue').default
+            
       }
   }
 </script>
