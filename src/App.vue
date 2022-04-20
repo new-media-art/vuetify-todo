@@ -58,23 +58,23 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-container class="pa-0">
+          <v-row>
+            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-spacer></v-spacer>
+            <search />
+          </v-row>
+          <v-row>
+            <v-app-bar-title class="ml-4">Vuetify Todo</v-app-bar-title>
+          </v-row>
+        </v-container>
 
-      <v-app-bar-title>Vuetify Todo</v-app-bar-title>
+      
 
-      <v-spacer></v-spacer>
+      
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+     
 
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -94,6 +94,7 @@
       drawer: null 
       }),
       components: {
+        'search': require('@/components/Tools/Search.vue').default,
         'snackbar': require('@/components/Shared/Snackbar.vue').default
       }
   }
